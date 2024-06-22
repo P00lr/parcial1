@@ -304,7 +304,11 @@ return [
             'url' => 'clientes',
             'icon' => 'fas fa-handshake',
         ],
-        
+        [
+            'text' => 'PRODUCTOS',
+            'url' => 'productos',
+            'icon' => 'fas fa-handshake',
+        ],
     ],
 
     /*
