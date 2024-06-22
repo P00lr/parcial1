@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Cliente;
 use App\Http\Requests\StoreClienteRequest;
+use App\Http\Requests\UpdateClienteRequest;
 
 class ClienteController extends Controller
 {
@@ -31,5 +32,20 @@ class ClienteController extends Controller
     {
         $cliente = Cliente::find($id);
         return view('clientes.show', compact('cliente'));
+    }
+
+    public function edit($id)
+    {
+        $cliente = Cliente::find($id);
+        return view('clientes.edit', compact('cliente'));
+    }
+
+    public function update(UpdateClienteRequest $request, $id)
+    {
+        $cliente = Cliente::find($id);
+        $cliente->update($request->validated());
+
+        return redirect()->route('clientes.index')
+                         ->with('success','Cliente actualizado correctamente.');
     }
 }
