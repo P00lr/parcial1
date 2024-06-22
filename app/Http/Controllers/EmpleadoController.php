@@ -27,5 +27,16 @@ class EmpleadoController extends Controller
                         ->with('success', 'Empleado creado exitosamente.');
     }
 
+    public function show(Empleado $empleado)
+    {
+        return view('empleados.show', compact('empleado'));
+    }
+
+    public function edit(Empleado $empleado)
+    {
+        return view('empleados.edit', compact('empleado'));
+    }
+
+
     
 }
