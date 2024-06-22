@@ -46,6 +46,12 @@ class EmpleadoController extends Controller
                         ->with('success', 'Empleado actualizado exitosamente.');
     }
 
+    public function destroy(Empleado $empleado)
+    {
+        $empleado->delete();
 
+        return redirect()->route('empleados.index')
+                        ->with('success', 'Empleado eliminado exitosamente.');
+    }
     
 }
