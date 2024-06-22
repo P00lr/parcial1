@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Empleado;
 use App\Http\Requests\StoreEmpleadoRequest;
+use App\Http\Requests\UpdateEmpleadoRequest;
 
 class EmpleadoController extends Controller
 {
@@ -35,6 +36,14 @@ class EmpleadoController extends Controller
     public function edit(Empleado $empleado)
     {
         return view('empleados.edit', compact('empleado'));
+    }
+
+    public function update(UpdateEmpleadoRequest $request, Empleado $empleado)
+    {
+        $empleado->update($request->validated());
+
+        return redirect()->route('empleados.index')
+                        ->with('success', 'Empleado actualizado exitosamente.');
     }
 
 
