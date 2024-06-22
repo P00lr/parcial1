@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Empleado;
+use App\Http\Requests\StoreEmpleadoRequest;
 
 class EmpleadoController extends Controller
 {
@@ -12,5 +13,19 @@ class EmpleadoController extends Controller
         $empleados = Empleado::all();
         return view('empleados.index', compact('empleados'));
     }
+
+    public function create()
+    {
+        return view('empleados.create');
+    }
+
+    public function store(StoreEmpleadoRequest $request)
+    {
+        Empleado::create($request->validated());
+
+        return redirect()->route('empleados.index')
+                        ->with('success', 'Empleado creado exitosamente.');
+    }
+
     
 }
