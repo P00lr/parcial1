@@ -32,4 +32,27 @@ class StoreEmpleadoRequest extends FormRequest
             'salario' => 'required|string|max:255',
         ];
     }
+
+    public function messages()
+        {
+            return [
+                'ci.required' => 'El C.I. es obligatorio.',
+                'ci.unique' => 'El C.I. ya ha sido registrado.',
+                //-------------------------------------------
+                'email.required' => 'El email es obligatorio.',
+                'email.unique' => 'El email ya ha sido registrado.',
+                //------------------------------------------- 
+                'telefono.required' => 'El telefono es obligatorio.',
+                'telefono.unique' => 'El telefono ya ha sido registrado.', 
+                //--------------------------------------------------------
+                'fechaNacimiento.required' => 'la fecha de nacimiento es obligatorio.',
+                //-----------------------------------------------------------------
+                'direccion.required' => 'La direccion es obligatorio.',
+                //-----------------------------------------------------------
+                'cargo.required' => 'El cargo es obligatorio.',
+                //----------------------------------------------
+                'salario.required' => 'El salario es obligatorio.',
+                
+            ];
+        }
 }
