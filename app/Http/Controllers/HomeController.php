@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Cliente;
+use App\Models\Empleado;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $totalClientes = Cliente::count();
+        $totalEmpleados = Empleado::count();
+
+        return view('home', compact('totalClientes', 'totalEmpleados'));
     }
 }
