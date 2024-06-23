@@ -12,38 +12,38 @@
     <div class="card">
         <div class="card-body">
             <div class="form-group">
-                <label for="nombreCompleto">Nombre Completo</label>
-                <input type="text" id="nombreCompleto" class="form-control" value="{{ $empleado->nombreCompleto }}" readonly>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" class="form-control" value="{{ $Productos->nombre }}" readonly>
             </div>
             <div class="form-group">
-                <label for="ci">CI</label>
-                <input type="text" id="ci" class="form-control" value="{{ $empleado->ci }}" readonly>
+                <label for="cantidad">Cantidad</label>
+                <input type="number" id="cantidad" class="form-control" value="{{ $Productos->cantidad }}" readonly>
             </div>
             <div class="form-group">
-                <label for="telefono">Teléfono</label>
-                <input type="text" id="telefono" class="form-control" value="{{ $empleado->telefono }}" readonly>
+                <label for="precio">Precio</label>
+                <input type="number" id="Precio" class="form-control" value="{{ $Productos->Precio }}" readonly>
             </div>
             <div class="form-group">
-                <label for="fechaNacimiento">Fecha de Nacimiento</label>
-                <input type="date" id="fechaNacimiento" class="form-control" value="{{ $empleado->fechaNacimiento }}" readonly>
+                <label for="descripcion">Descripcion</label>
+                <input type="text" id="descripcion" class="form-control" value="{{ $Productos->descripcion }}" readonly>
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" class="form-control" value="{{ $empleado->email }}" readonly>
+                <label for="marca">Marca</label>
+                <input type="text" id="marca" class="form-control" value="{{ $Productos->marca }}" readonly>
             </div>
             <div class="form-group">
-                <label for="direccion">Dirección</label>
-                <input type="text" id="direccion" class="form-control" value="{{ $empleado->direccion }}" readonly>
+                <label for="agregado_fecha">Fecha de ingreso</label>
+                <input type="date" id="agregado_fecha" class="form-control" value="{{ $Productos->agregado_fecha }}" readonly>
             </div>
             <div class="form-group">
-                <label for="cargo">Cargo</label>
-                <input type="text" id="cargo" class="form-control" value="{{ $empleado->cargo }}" readonly>
+                <label for="fecha_vencimiento">Fecha de vencimiento</label>
+                <input type="date" id="fecha_vencimiento" class="form-control" value="{{ $Productos->fecha_vencimiento }}" readonly>
             </div>
             <div class="form-group">
-                <label for="salario">Salario</label>
-                <input type="text" id="salario" class="form-control" value="{{ $empleado->salario }}" readonly>
+                <label for="categoria">Categoria</label>
+                <input type="text" id="categoria" class="form-control" value="{{ $Productos->categoria }}" readonly>
             </div>
-            <a href="{{ route('empleados.index') }}" class="btn btn-primary">Volver</a>
+            <a href="{{ route('productos.index') }}" class="btn btn-primary">Volver</a>
         </div>
     </div>
 @stop

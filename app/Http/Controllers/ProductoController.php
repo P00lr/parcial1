@@ -40,7 +40,7 @@ class ProductoController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('producto.show', compact('Productos'));
     }
 
     /**
@@ -48,7 +48,7 @@ class ProductoController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('producto.edit', compact('Productos'));
     }
 
     /**
