@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('direccion');
             $table->string('genero');
-            $table->date('fechaNacimiento')->nullable();
-            $table->string('formaPago')->nullable();     
+            $table->date('fechaNacimiento');
+            $table->string('formaPago');     
             $table->string('estadoCliente')->default('activo');
             $table->timestamps();
         });

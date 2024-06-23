@@ -24,27 +24,28 @@ class StoreProductoRequest extends FormRequest
     {
         return [
             'nombre' => 'required|string|max:255',
-            'cantidad' => 'required|number|unique:producto,cantidad|max:255',
-            'precio' => 'required|number|unique:producto,precio|max:255',
-            'descripcion' => 'required|text|max:255',
-            'marca' => 'required|string|text|max:255|unique:producto,marca',
+            'cantidad' => 'required|integer|min:1',
+            'precio' => 'required|numeric|min:0',
+            'descripcion' => 'nullable|string',
+            'marca' => 'required|string|max:255',
             'agregado_fecha' => 'required|date',
-            'fecha_vencimiento' => 'required|date',
-            'categoria' => 'required|number|max:255',
+            'fecha_vencimiento' => 'required|date|after:agregado_fecha',
+            'categoria' => 'required|string|max:255',
         ];
     }
 
     public function messages()
     {
             return [
-                'cantidad.required' => 'Cantidad cantidad es obligatorio.',
-                'cantidad.unique' => 'Cantidad ya ha sido registrado.',
+                'nombre.required' => 'El nombre es obligatorio.',
+                //--------------------------------------------------------
+                'cantidad.required' => 'La cantidad es obligatorio.',
                 //-------------------------------------------
-                'descripcion.required' => 'Descripcion obligatorio.',
-                'descripcion.unique' => 'Descripcion ya ha sido registrado.',
+                'precio.required' => 'El precio es obligatorio.',
+                //---------------------------------------------
+                'descripcion.required' => 'haz una pequeña descripcion.',
                 //------------------------------------------- 
                 'marca.required' => 'La marca es obligatorio.',
-                'marca.unique' => 'marca ya ha sido registrado.', 
                 //--------------------------------------------------------
                 'agregado_fecha.required' => 'la fecha de ingreso es obligatorio.',
                 //-----------------------------------------------------------------

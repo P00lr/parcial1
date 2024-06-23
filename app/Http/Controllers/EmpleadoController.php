@@ -23,10 +23,9 @@ class EmpleadoController extends Controller
 
     public function store(StoreEmpleadoRequest $request)
     {
-        Empleado::create($request->validated());
-    
+        Empleado::create($request->validated());//si cumple la validacion crea al empleado
         return redirect()->route('empleados.index')
-                         ->with('success', 'Empleado registrado correctamente.');
+                         ->with('success', 'Empleado registrado correctamente.');//mensaje que se muestra cuando se crea el empleado
     }
 
     public function show(Empleado $empleado)

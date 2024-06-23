@@ -4,7 +4,7 @@
 @section('title', 'Crear Empleado')
 
 @section('content_header')
-    <h1>Crear Empleado</h1>
+    <h1>Registrar Nuevo Empleado</h1>
 @stop
 @section('content')
     @if(session('success'))
@@ -67,7 +67,7 @@
                             @enderror" value="{{ old('fechaNacimiento') }}">
         
                             @error('fechaNacimiento')
-                                <span class="invalid-feedback">{{ $message }}</span>{{-- muestra las reglas que anote en la validacion --}}
+                                <span class="invalid-feedback">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>

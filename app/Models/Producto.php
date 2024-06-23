@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Producto extends Model
 {
     use HasFactory;
+    
     protected $fillable = [
         
-        'nombre',
+         'nombre',
          'cantidad',
          'precio',
          'descripcion',
@@ -18,7 +19,5 @@ class Producto extends Model
          'agregado_fecha',
          'fecha_vencimiento',
          'categoria',
- 
- 
      ];
 }

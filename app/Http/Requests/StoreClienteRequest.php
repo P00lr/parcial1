@@ -27,8 +27,31 @@ class StoreClienteRequest extends FormRequest
             'email' => 'required|string|email|unique:clientes',
             'direccion' => 'required|string',
             'genero' => 'required|string',
-            'fechaNacimiento' => 'nullable|date',
-            'formaPago' => 'nullable|string',
+            'fechaNacimiento' => 'required|nullable|date',
+            'formaPago' => 'required|nullable|string',
         ];
+    }
+
+    public function messages()
+    {
+            return [
+                'nombreCompleto.required' => 'Anote su nombre completo por favor',
+                //-----------------------------------------------------
+                'telefono.required' => 'El telefono es obligatorio.',
+                'telefono.unique' => 'El telefono ya ha sido registrado.', 
+                //--------------------------------------------------------
+                'email.required' => 'El email es obligatorio.',
+                'email.unique' => 'El email ya ha sido registrado.',
+                //-------------------------------------------
+                'direccion.required' => 'La direccion es obligatorio.',
+                //-----------------------------------------------------------------
+                'genero.required' => 'El genero es obligatorio.',
+                //------------------------------------------- 
+                'fechaNacimiento.required' => 'la fecha de nacimiento es obligatorio.',
+                //-----------------------------------------------------------
+                'formaPago.required' => 'La forma de pago es obligatorio.',
+                //----------------------------------------------
+                
+            ];
     }
 }

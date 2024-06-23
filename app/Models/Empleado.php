@@ -9,7 +9,7 @@ class Empleado extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
+    protected $fillable = [//para la asignacion masiva en el formulario
         'nombreCompleto', 
         'ci', 
         'telefono', 

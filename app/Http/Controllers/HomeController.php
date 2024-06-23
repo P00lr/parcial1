@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Cliente;
 use App\Models\Empleado;
+use App\Models\Producto;
 
 class HomeController extends Controller
 {
@@ -25,9 +26,20 @@ class HomeController extends Controller
      */
     public function index()
     {
+       //contando el total
         $totalClientes = Cliente::count();
         $totalEmpleados = Empleado::count();
+        $totalProductos = Producto::count();
 
-        return view('home', compact('totalClientes', 'totalEmpleados'));
+        //ordenando y guardando los ultimos 3 de cada uno de los modelos
+        $ultimosClientes = Cliente::orderBy('created_at', 'desc')->take(3)->get();
+        $ultimosEmpleados = Empleado::orderBy('created_at', 'desc')->take(3)->get();
+        $ultimosProductos = Producto::orderBy('created_at', 'desc')->take(3)->get();
+
+        //rernando las variables para mi vista home
+        return view('home', compact(
+            'totalClientes', 'totalEmpleados', 'totalProductos',
+            'ultimosClientes', 'ultimosEmpleados', 'ultimosProductos'
+        ));
     }
 }

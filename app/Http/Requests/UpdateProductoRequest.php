@@ -21,16 +21,15 @@ class UpdateProductoRequest extends FormRequest
      */
     public function rules(): array
     {
-        $id = $this->route('producto'); // Obtiene el ID del cliente desde la ruta
         return [
-            'nombre' => 'required|string|max:255',
-            'cantidad' => 'required|number|unique:producto,cantidad|max:255',
-            'precio' => 'required|number|unique:producto,precio|max:255',
-            'descripcion' => 'required|text|max:255',
-            'marca' => 'required|string|text|max:255|unique:producto,marca',
+           'nombre' => 'required|string|max:255',
+            'cantidad' => 'required|integer|min:1',
+            'precio' => 'required|numeric|min:0',
+            'descripcion' => 'nullable|string',
+            'marca' => 'required|string|max:255',
             'agregado_fecha' => 'required|date',
-            'fecha_vencimiento' => 'required|date',
-            'categoria' => 'required|number|max:255',
+            'fecha_vencimiento' => 'required|date|after:agregado_fecha',
+            'categoria' => 'required|string|max:255',
         ];
     }
 }

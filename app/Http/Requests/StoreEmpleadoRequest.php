@@ -37,6 +37,8 @@ class StoreEmpleadoRequest extends FormRequest
     public function messages()
     {
             return [
+                'nombreCompleto.required' => 'Anote el nombre completo por favor',
+                //-------------------------------------------------------
                 'ci.required' => 'El C.I. es obligatorio.',
                 'ci.unique' => 'El C.I. ya ha sido registrado.',
                 //-------------------------------------------
