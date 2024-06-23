@@ -12,6 +12,7 @@ class EmpleadoController extends Controller
     public function index()
     {
         $empleados = Empleado::all();
+        
         return view('empleados.index', compact('empleados'));
     }
 
@@ -23,9 +24,9 @@ class EmpleadoController extends Controller
     public function store(StoreEmpleadoRequest $request)
     {
         Empleado::create($request->validated());
-
+    
         return redirect()->route('empleados.index')
-                        ->with('success', 'Empleado creado exitosamente.');
+                         ->with('success', 'Empleado registrado correctamente.');
     }
 
     public function show(Empleado $empleado)

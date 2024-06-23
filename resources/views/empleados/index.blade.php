@@ -5,10 +5,15 @@
 @section('title', 'Lista de Empleados')
 
 @section('content_header')
-    <h1>Lista de Empleados</h1>
+    <h1 class="text-center">Lista de Empleados</h1>
 @stop
 
 @section('content')
+@if(session('success'))
+        <div class="alert alert-success" id="success-alert">
+            {{ session('success') }}
+        </div>
+@endif
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">Empleados Registrados</h3>
@@ -53,3 +58,13 @@
     </div>
 @stop
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const alert = document.getElementById('success-alert');
+        if (alert) {
+            setTimeout(() => {
+                alert.style.display = 'none';
+            }, 3000);
+        }
+    });
+</script>

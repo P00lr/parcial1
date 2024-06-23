@@ -3,10 +3,14 @@
 @section('title', 'Crear Cliente')
 
 @section('content_header')
-    <h1>Crear Nuevo Cliente</h1>
+    <h1 class="text-center">Crear Nuevo Cliente</h1>
 @stop
-
 @section('content')
+@if(session('success'))
+        <div class="alert alert-success" id="success-alert">
+            {{ session('success') }}
+        </div>
+@endif
     <div class="card">
         <div class="card-body">
             <form action="{{ route('clientes.store') }}" method="POST">
@@ -60,3 +64,14 @@
         </div>
     </div>
 @stop
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const alert = document.getElementById('success-alert');
+        if (alert) {
+            setTimeout(() => {
+                alert.style.display = 'none';
+            }, 3000);
+        }
+    });
+</script>

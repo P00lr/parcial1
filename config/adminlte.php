@@ -152,12 +152,12 @@ return [
     |
     */
 
-    'layout_topnav' => null,
+    'layout_topnav' => false,//usando el nav
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => null,
+    'layout_fixed_sidebar' => true,//fijando barra lateral izquierda
+    'layout_fixed_navbar' => true,//fijando el nav
     'layout_fixed_footer' => null,
-    'layout_dark_mode' => null,
+    'layout_dark_mode' => null,//cuerpo modo oscuro
 
     /*
     |--------------------------------------------------------------------------
@@ -198,7 +198,7 @@ return [
     'classes_content' => '',
     'classes_sidebar' => 'sidebar-dark-primary elevation-4',
     'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-white navbar-light',
+    'classes_topnav' => 'navbar-dark navbar-light',//nav modo oscuro
     'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
 

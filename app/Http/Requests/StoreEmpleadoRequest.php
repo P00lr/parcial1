@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Models\Empleado;
 
 class StoreEmpleadoRequest extends FormRequest
 {
@@ -34,7 +35,7 @@ class StoreEmpleadoRequest extends FormRequest
     }
 
     public function messages()
-        {
+    {
             return [
                 'ci.required' => 'El C.I. es obligatorio.',
                 'ci.unique' => 'El C.I. ya ha sido registrado.',
@@ -54,5 +55,7 @@ class StoreEmpleadoRequest extends FormRequest
                 'salario.required' => 'El salario es obligatorio.',
                 
             ];
-        }
+    }
+
+    
 }

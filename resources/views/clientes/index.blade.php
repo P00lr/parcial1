@@ -3,7 +3,7 @@
 @section('title', 'Clientes')
 
 @section('content_header')
-    <h1>Listado de Clientes</h1>
+    <h1 class="text-center">Listado de Clientes</h1>
 @stop
 
 @section('content')
@@ -13,8 +13,7 @@
             <div class="card-tools">
                 <a href="{{ route('clientes.create') }}" class="btn btn-primary">Nuevo Cliente</a>
             </div>
-        </div>
-        <!-- /.card-header -->
+        </div> 
         <div class="card-body">
             <table class="table table-bordered">
                 <thead>
@@ -25,7 +24,6 @@
                         <th>Email</th>
                         <th>Dirección</th>
                         <th>Género</th>
-                        <th>Fecha de Nacimiento</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -38,7 +36,6 @@
                             <td>{{ $cliente->email }}</td>
                             <td>{{ $cliente->direccion }}</td>
                             <td>{{ $cliente->genero }}</td>
-                            <td>{{ $cliente->fechaNacimiento }}</td>
                             <td>
                                 <a href="{{ route('clientes.show', $cliente->id) }}" class="btn btn-info btn-sm">Ver</a>
                                 <a href="{{ route('clientes.edit', $cliente->id) }}" class="btn btn-primary btn-sm">Editar</a>
@@ -56,3 +53,5 @@
     
     </div>
 @stop
+
+
