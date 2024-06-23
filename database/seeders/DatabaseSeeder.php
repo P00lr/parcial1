@@ -2,7 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Empleado;
+use App\Models\Producto;
 use App\Models\User;
+use GuzzleHttp\Promise\Create;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,11 +16,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+       Producto::factory(50)->create();
+       Empleado::factory(50)->create();
     }
 }
