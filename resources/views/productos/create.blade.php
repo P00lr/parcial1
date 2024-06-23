@@ -4,7 +4,7 @@
 @section('title', 'Crear producto')
 
 @section('content_header')
-    <h1>Crear producto</h1>
+    <h1 class="text-center">Crear producto</h1>
 @stop
 
 @section('content')

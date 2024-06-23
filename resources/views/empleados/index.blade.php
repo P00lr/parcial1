@@ -1,5 +1,3 @@
-<!-- resources/views/empleados/index.blade.php -->
-
 @extends('adminlte::page')
 
 @section('title', 'Lista de Empleados')

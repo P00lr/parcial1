@@ -307,7 +307,7 @@ return [
         [
             'text' => 'PRODUCTOS',
             'url' => 'productos',
-            'icon' => 'fas fa-handshake',
+            'icon' => 'fas fa-boxes',
         ],
     ],
 
